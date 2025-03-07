@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="shopping.css">
+    <title>Cart</title>
+</head>
+<body class="bg-[#d9dfc6]">
+    <div class="flex justify-evenly bg-slate-300 h-16 items-center w-[80rem] ml-10 rounded-lg mt-4">
+        <h1 class="text-xl font-semibold">Product</h1>
+        <h1 class="text-xl font-semibold">Price</h1>
+        <h1 class="text-xl font-semibold">Quantity</h1>
+        <h1 class="text-xl font-semibold">Subtotal</h1> 
+    </div>
+    <div id="cart"></div>
+    <div class="mt-20 flex justify-center"><a href="form.html"><button  id="btn" class="border 1px w-48 h-10 rounded-2xl text-white font-semibold bg-orange-300" >Proceed To Checkout</button></a></div>
+    <script>
+        let cart=document.getElementById('cart');
+        let res=JSON.parse(localStorage.getItem('objects'))
+        let tSum=document.createElement('div');
+        tSum.classList.add('total')
+        let totalSum=0
+        res.forEach(item=>{
+            let div=document.createElement('div');
+            div.innerHTML=`<img style="height:50px;width: 50px" src='${item.img}' alt='${item.title}'></img><h1 class="itemData">${item.price}</h1><h1 class="itemData">${item.noOfItems}</h1><h1 class="itemData">${item.tprice}</h1>`
+            div.classList.add('cartDiv')
+            totalSum=totalSum+Number(item.tprice);
+            console.log("Total Sum Is",totalSum)
+            cart.append(div,tSum)
+        })
+        tSum.innerHTML="Total Price: Rs "+totalSum;
+    </script>
+</body>
+</html>

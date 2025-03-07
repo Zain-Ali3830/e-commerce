@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="shopping.css">
+    <title>Form</title>
+</head>
+<body class="flex justify-center items-center  h-[100vh] bg-[#FAC67A]">
+   <div id="form" class="border h-[30rem] w-96 flex justify-center   rounded-lg bg-orange-100 ">
+    <form  action="" class=" flex-col justify-center pt-4" >
+        <h2 class="text-4xl font-semibold text-center ">Form To Fill</h2><br>
+        <label for="name" class="font-semibold text-xl">Name:</label><br>
+        <input type="text" id="name" class="border-[2px] w-64 rounded-lg"><br>
+        <label for="address" class="font-semibold text-xl">Address:</label><br>
+        <input type="text" id="address" class="border-[2px] w-64 rounded-lg"><br>
+        <label for="contact" class="font-semibold text-xl">Contact:</label><br>
+        <input type="text" id="contact" class="border-[2px] w-64 rounded-lg"><br><br>
+        <select name="" id="select" class="font-semibold text-xl  rounded-lg"><br>
+            <option value="Payment Methods" disabled hidden selected class="text-base" >Payment Methods</option><br>
+            <option value="Jazz Cash" class="text-base font-semibold">Jazz Cash</option>
+            <option value="Pay Pall" class="text-base font-semibold">Pay Pal</option>
+            <option value="Cash on Delivery" class="text-base font-semibold">Cash on Delivery</option>
+        </select><br><br>
+        <div class="flex justify-center mt-5"><button class="text-xl font-semibold text-white w-40 rounded-lg bg-orange-500  " id="order" >Place Order</button></div>
+    </form>
+   </div>
+   <script>
+    let name=document.getElementById('name')
+    let address=document.getElementById('address')
+    let contact=document.getElementById('contact')
+    let select=document.getElementById('select')
+    let btn=document.getElementById('order');
+    btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        if((name.value===""||address.value===""||contact.value===""||select.value==="")){
+            alert("Please fill all the fields!")
+            return;
+        }
+        else
+        alert("Thanks for shopping");
+    })
+   </script>
+</body>
+</html>

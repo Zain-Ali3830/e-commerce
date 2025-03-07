@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+padding: 0%;
+margin: 0%;
+}
+.container{
+  height: 400px;
+  width: 300px;
+  border: 0.5px solid #705c53;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 15px;
+  background-color: #F5F5F7;
+}
+.increment{
+    border: 1px solid #eed3b1;
+    color:black ;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    font-weight:500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eed3b1;
+    font-weight: 500;
+}
+.decrement{
+    border: 1px solid #eed3b1;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    font-weight:500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eed3b1;
+    font-weight: 500;
+    color: black;
+
+}
+.buttonContainer{
+    display: flex;
+    gap: 10px;
+}
+#form{
+    box-shadow: 10px 10px 10px lightyellow;
+}
+.price{
+    border: 1px solid #eed3b1;
+    width: 45px;
+    border-radius: 4px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eed3b1;
+    font-weight: 500;
+    color: black;
+}
+
+.addToCart{
+    border: 1px solid #eed3b1;
+    font-weight: 500;
+    color: black;
+    width: 45px;
+    border-radius: 4px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    background-color: #eed3b1;
+
+}
+.cartDiv{
+    width: 1280px;
+    height: 60px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:ivory;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+.itemData{
+    font-size: medium;
+    font-weight:500;
+}
+.total{
+    height: 60px;
+    width: 170px;
+    background-color: burlywood;
+    font-size: large;
+    font-style: oblique;
+    font-weight: 500;
+    border-radius: 8px;
+    display: flex;
+    margin-left: 43%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-right: 50%;
+    margin-top: 50px;
+}
