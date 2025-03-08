@@ -1,5 +1,3 @@
-// let array=JSON.parse(localStorage.getItem('objects')||[]);
-// let array=[]
 let array=JSON.parse(localStorage.getItem('objects'))||[];
 let tSum=0;
 let mainDiv=document.getElementById('mainDiv')
@@ -71,11 +69,7 @@ fetch('https://fakestoreapi.com/products?limit=4')
                 alert("Can't added to cart")
                 return
                }
-                // array.push(obj)
-                // alert("Added to Cart") 
                 localStorage.setItem('objects',JSON.stringify(array))
-                // localStorage.setItem("tSum",tSum)
-                // console.log(obj)
                 console.log(array)
             })
      
