@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="shopping.css">
+</head>
+<body>
+    <div class="flex justify-evenly bg-slate-300 h-16 items-center w-[80rem] ml-10 rounded-lg mt-4">
+        <h1 class="text-xl font-semibold">Items</h1>
+        <h1 class="text-xl font-semibold">Quantity</h1>
+        <h1 class="text-xl font-semibold">Sub Total</h1>
+    </div>
+    <div id="details">
+
+    </div>
+    <div id="Total" class="text-lg font-semibold h-20 w-32 bg-red-300 flex justify-center items-center text-center rounded-lg text-white ml-[45%] mt-16"></div>
+    <script>
+        let details=document.getElementById('details')
+        let data=JSON.parse(localStorage.getItem('objects'));
+        console.log("Data",data)
+        data.forEach(item=>{
+            let container=document.createElement('div')
+            container.classList.add('cartDiv')
+            container.innerHTML=`<img style="height:50px;width: 50px" src="${item.img}"></img><h1>${item.noOfItems}</h1><h1>${item.tprice}</h1>`
+            details.append(container)
+        })
+        let total=JSON.parse(localStorage.getItem('Total Price'))
+        let tPrice=document.getElementById('Total')
+        tPrice.innerHTML="Total Price Rs:"+total
+        localStorage.removeItem('objects')
+    </script>
+</body>
+</html>

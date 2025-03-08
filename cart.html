@@ -31,6 +31,7 @@
             cart.append(div,tSum)
         })
         tSum.innerHTML="Total Price: Rs "+totalSum;
+        localStorage.setItem("Total Price",JSON.stringify(totalSum))
     </script>
 </body>
 </html>

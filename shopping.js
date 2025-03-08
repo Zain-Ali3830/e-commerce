@@ -1,4 +1,6 @@
-let array=[];
+// let array=JSON.parse(localStorage.getItem('objects')||[]);
+// let array=[]
+let array=JSON.parse(localStorage.getItem('objects'))||[];
 let tSum=0;
 let mainDiv=document.getElementById('mainDiv')
 fetch('https://fakestoreapi.com/products?limit=4')
@@ -50,7 +52,8 @@ fetch('https://fakestoreapi.com/products?limit=4')
             addToCart.classList.add('addToCart')
             addToCart.innerHTML="Cart"
             addToCart.addEventListener('click',()=>{
-                alert("Added to Cart") 
+                //  let array=JSON.parse(localStorage.getItem('objects'))||[];
+                // let array=[]
                 let obj={
                     img:res.image,
                     title:res.title,
@@ -58,10 +61,22 @@ fetch('https://fakestoreapi.com/products?limit=4')
                     tprice:sum.toFixed(0),
                     noOfItems:inc,
                 }
+               let exist=array.some(item=>item.title===obj.title)
+               if(!exist&&obj.noOfItems>0){
+                alert("Added to cart")
                 array.push(obj)
+                priceContainer.innerHTML="Price";
+               }
+               if(exist||obj.noOfItems<=0){
+                alert("Can't added to cart")
+                return
+               }
+                // array.push(obj)
+                // alert("Added to Cart") 
                 localStorage.setItem('objects',JSON.stringify(array))
-                localStorage.setItem("tSum",tSum)
-                console.log(obj)
+                // localStorage.setItem("tSum",tSum)
+                // console.log(obj)
+                console.log(array)
             })
      
             container.innerHTML=`<img src='${res.image}' alt='${res.title}'style="height:150px; width:150px ; padding-top:20px "></img>
@@ -76,7 +91,3 @@ fetch('https://fakestoreapi.com/products?limit=4')
             mainDiv.append(container)
     })
 })
-
-
-
-
